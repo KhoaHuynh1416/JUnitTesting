@@ -17,6 +17,14 @@ public class PhieunhapDTO {
     String MaNCC;
     String MaNV;
     float TongTien;
+    
+    public PhieunhapDTO(){
+        MaPN = "";
+        NgayNhap = null;
+        MaNCC = "";
+        MaNV = "";
+        TongTien = 0;
+    }
 
     public String getMaPN() {
         return MaPN;

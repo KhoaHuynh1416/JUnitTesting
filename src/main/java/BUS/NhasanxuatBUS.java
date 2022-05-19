@@ -25,8 +25,6 @@ public class NhasanxuatBUS {
         danhSachNhaSanXuat = nhaSanXuatDAO.getDanhSachNhaSanXuat();
     }
     
-    
-    
     public ArrayList<NhaSanXuatDTO> getDanhSachNhaSX() {
         return danhSachNhaSanXuat;
     }

@@ -5,6 +5,7 @@
  */
 package DTO;
 
+import junit.framework.TestCase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author PC
  */
-public class SanPhamDTOTest{
+public class SanPhamDTOTest extends TestCase{
     
     public SanPhamDTOTest() {
     }
@@ -59,6 +60,21 @@ public class SanPhamDTOTest{
         assertEquals(expResult, instance.getMaLoai());
     }
 
+    @Test
+    public void testSetMaLoaiWithSymbols(){
+        String MaLoai = "\"loai01";
+        SanPhamDTO instance = new SanPhamDTO();
+        Exception ex = assertThrows(Exception.class, 
+                ()->instance.setMaLoai(MaLoai));    
+    }
+    
+    @Test
+    public void testSetMaLoaiWithSpaces(){
+        String MaLoai = " loai01";
+        SanPhamDTO instance = new SanPhamDTO();
+        Exception ex = assertThrows(Exception.class, 
+                ()->instance.setMaLoai(MaLoai));    
+    }
     /**
      * Test of getMaNSX method, of class SanPhamDTO.
      */
@@ -82,6 +98,21 @@ public class SanPhamDTOTest{
         assertEquals(expResult, instance.getMaNSX());
     }
 
+    @Test
+    public void testSetMaNSXWithSymbols(){
+        String MaNSX = "\"nsx01";
+        SanPhamDTO instance = new SanPhamDTO();
+        Exception ex = assertThrows(Exception.class, 
+                ()->instance.setMaNSX(MaNSX));    
+    }
+    
+    @Test
+    public void testSetMaNSXWithSpaces(){
+        String MaNSX = " nsx01";
+        SanPhamDTO instance = new SanPhamDTO();
+        Exception ex = assertThrows(Exception.class, 
+                ()->instance.setMaNSX(MaNSX));    
+    }    
     /**
      * Test of getMaSP method, of class SanPhamDTO.
      */
@@ -105,6 +136,21 @@ public class SanPhamDTOTest{
         assertEquals(expResult, instance.getMaSP());
     }
 
+    @Test
+    public void testSetMaSPWithSymbols(){
+        String MaSP = "\"SP001";
+        SanPhamDTO instance = new SanPhamDTO();
+        Exception ex = assertThrows(Exception.class, 
+                ()->instance.setMaSP(MaSP));    
+    }
+    
+    @Test
+    public void testSetMaSPWithSpaces(){
+        String MaSP = " SP001";
+        SanPhamDTO instance = new SanPhamDTO();
+        Exception ex = assertThrows(Exception.class, 
+                ()->instance.setMaSP(MaSP));    
+    }
     /**
      * Test of getTenSP method, of class SanPhamDTO.
      */
@@ -128,6 +174,21 @@ public class SanPhamDTOTest{
         assertEquals(expResult, instance.getTenSP());
     }
 
+    @Test
+    public void testSetTenSPWithSymbols(){
+        String TenSP = "\"Nokia";
+        SanPhamDTO instance = new SanPhamDTO();
+        Exception ex = assertThrows(Exception.class, 
+                ()->instance.setTenSP(TenSP));    
+    }
+    
+    @Test
+    public void testSetTenSPWithSpaces(){
+        String TenSP = " Nokia";
+        SanPhamDTO instance = new SanPhamDTO();
+        Exception ex = assertThrows(Exception.class, 
+                ()->instance.setTenSP(TenSP));    
+    }    
     /**
      * Test of getSoLuong method, of class SanPhamDTO.
      */
@@ -141,9 +202,10 @@ public class SanPhamDTOTest{
 
     /**
      * Test of setSoLuong method, of class SanPhamDTO.
+     * @throws java.lang.Exception
      */
     @Test
-    public void testSetSoLuong() throws Exception {
+    public void testSetSoLuong() throws Exception{
         int SoLuong = 5;
         SanPhamDTO instance = new SanPhamDTO();
         instance.setSoLuong(SoLuong);
@@ -175,10 +237,10 @@ public class SanPhamDTOTest{
      */
     @Test
     public void testSetDonGia() {
-        float DonGia = 1000.0F;
+        float DonGia = 5.0F;
         SanPhamDTO instance = new SanPhamDTO();
         instance.setDonGia(DonGia);
-        float expResult = 1000.0F;
+        float expResult = 5.0F;
         assertEquals(expResult, instance.getDonGia());        
     }
     

@@ -84,7 +84,5 @@ public class HoadonDTO {
 
     public void setTientra(double tientra) {
         this.tientra = tientra;
-    }
-
-    
+    }  
 }

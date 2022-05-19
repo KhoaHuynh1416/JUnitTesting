@@ -31,6 +31,13 @@ public class MyConnection {
         DataBase = db;
     }
     
+    public MyConnection(){
+        Host = "localhost";
+        UserName = "root";
+        Password = "";
+        DataBase = "phonestore";
+    }
+    
     public void Close() throws Exception{
         if(rs != null && !rs.isClosed()){
             rs.close();
