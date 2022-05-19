@@ -1,0 +1,46 @@
+Hàm testGetXxx(){}
+=> Nhiệm vụ chính là test xem hàm có lấy ra được giá trị của thuộc tính Xxx hay không.
++ TH1: 
+assertEquals(getXxx, ""); 
+//Test trong trường hợp constructor không truyền tham số [new abcDTO()] xem có trả về giá trị hay không ? (Mặc định String trả về "", int trả về 0)
++ TH2:
+// abcDTO(int Aaa, int Bbb, String Ccc, String Ddd)
+int temp01, temp02; 
+String temp03, temp04;
+
+String[] expResult = {"" + temp01, "" + temp02, temp03, temp04};
+String[] actResult = {"", "", "", ""};
+
+new abcDTO((int)expResult[0], (int)expResult[1], expResult[2], expResult[3]);
+
+actResult[0] = "" + getAaa(); // "" + do Aaa là int
+actResult[1] = "" + getBbb();
+actResult[2] = getCcc();
+actResult[3] = getDdd();
+ 
+assertArrayEquals(actResult, expResult);
+// Test trong trường hợp constructor có truyền tham số [new abcDTO(a)] trả về có đúng giá trị khai báo hay không ?
+
+Hàm testSetXxx(a){}
+=> Nhiệm vụ chính là test xem hàm có truyền đúng giá trị hợp lệ vào thuộc tính Xxx của đối tượng hay không.
++ TH1: 
+setXxx(valid_temp);
+assertEquals(valid_temp, getXxx());
++ TH2:
+Exception ex = assertThrows(Exception.class, 
+                ()->instance.setXxx(invalid_temp));
+/* invalid:
+	+ Đối với chuỗi: 
+		chưa xử lý dấu cách dư thừa  
+		chưa xử lý ký tự đặc biệt
+		có chứa ký tự số (đối với tên người)
+	+ Đối với số: 
+		số âm bất hợp lý 
+		số quá lớn
+*/
+
+
+Một số kế hoạch tiếp theo:
++ Hoàn thành JUnit test với các file DAO.
++ Hoàn thành các sheets Excel cho testDAO (sẽ gửi template sau).
++ Hoàn thành các sheets Excel Manual Testing (test tay) cho các chức năng. (sẽ gửi sau)  
